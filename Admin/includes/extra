@@ -1,0 +1,188 @@
+<?php
+                $select = "SELECT * FROM `colors` WHERE 1";
+                $select_run  = mysqli_query($conn,$select);
+                $row = mysqli_fetch_assoc($select_run);
+                echo "<input type='color' class='form-control form-control-color' id='primaryColor'
+                value='".$row['primary_200']."' title='Choose your color'>";
+
+                echo "<input type='text' class='form-control' id='primaryColorInput' value='".$row['primary_200']."' name='p_200'>";
+            ?>
+
+
+
+<?php
+    include('./config/dbconn.php');
+
+    if(isset($_POST['update_btn'])){
+       
+        $p_200 = $_POST['p_200'];
+        $p_400 = $_POST['p_400'];
+        $p_600 = $_POST['p_600'];
+        $sec = $_POST['sec'];
+
+        $update = "UPDATE `colors` SET `primary_200` = '$p_200', `primary_400` = '$p_400', `primary_600` = '$p_600', `secondary` = '$sec' 
+        WHERE `colors`.`Id` = 1";
+        $run_sql = mysqli_query('$conn',$update);
+        if($run_sql){
+            ?>
+            <script>
+                alert("Updated Successfully");
+            </script>
+            <?php
+        }
+        else{
+            ?>
+            <script>
+                alert("Updated Failed");
+            </script>
+            <?php
+        }
+    }
+    ?>
+
+
+
+
+<div class="logo">
+    <!-- Including php for displaying logo from db  -->
+    <?php
+        $logoDest = 'http://localhost/Personal_Portfolio/Admin/images/';
+        $select_query = "SELECT * FROM `hero`";
+        $select_query_run = mysqli_query($conn, $select_query);
+        $row =  mysqli_fetch_row($select_query_run);
+        $imageAddress = $logoDest. row[1];
+    ?>
+    <!-- <h2 class="logo">M<span>A</span></h2> -->
+    <img src=" <?php $imageAddress; ?> "  alt="logo" width="80">
+</div>
+
+
+<h2 class="name anim"> <?php echo row[3]; ?></h2>;
+
+
+
+<label for="" class="form-label">Chose Primary Color-400</label>
+            <div class="d-flex">
+                <input type="color" class="form-control form-control-color" id="primaryColor1"
+                    value="<?php echo $color_row['2'] ?>" title="Choose your color">
+                <input type="text" class="form-control" id="primaryColorInput1" value="<?php echo $color_row['2'] ?>"
+                    name="p_400">
+            </div>
+
+
+
+
+
+
+            UPDATE Service
+            
+    switch ($newService) {
+        case '0': // Graphic
+            $update_service_query = "UPDATE `services` SET `service` = 'Graphic Designing', `totalProjects` = '$newTotalProjects', `icon` = 'fa-solid fa-pen-nib' WHERE `services`.`Id` = $service_id";
+            $update_service_query_run = mysqli_query($conn,$update_service_query);
+            
+            if($update_service_query_run){
+
+                ?>
+                <script>
+                    alert("Service Updated Successfully!");
+                </script>
+                <?php
+            }
+            else{
+                ?>
+                <script>
+                    alert("Service not Updated Successfully!");
+                </script>
+                <?php
+            }
+        break;
+        case '1': // Website
+            $update_service_query = "UPDATE `services` SET `service` = 'Website Development', `totalProjects` = '$newTotalProjects', `icon` = 'fa-solid fa-earth-americas' WHERE `services`.`Id` = $service_id";
+            $update_service_query_run = mysqli_query($conn,$update_service_query);
+            
+            if($update_service_query_run){
+
+                ?>
+                <script>
+                    alert("Service Updated Successfully!");
+                </script>
+                <?php
+            }
+            else{
+                ?>
+                <script>
+                    alert("Service not Updated Successfully!");
+                </script>
+                <?php
+            }
+        break;
+        case '2': // Android
+            $update_service_query = "UPDATE `services` SET `service` = 'Android Development', `totalProjects` = '$newTotalProjects', `icon` = 'fa-brands fa-android' WHERE `services`.`Id` = $service_id";
+            $update_service_query_run = mysqli_query($conn,$update_service_query);
+            
+            if($update_service_query_run){
+
+                ?>
+                <script>
+                    alert("Service Updated Successfully!");
+                </script>
+                <?php
+            }
+            else{
+                ?>
+                <script>
+                    alert("Service not Updated Successfully!");
+                </script>
+                <?php
+            }
+        break;
+        case '3': // Database
+            $update_service_query = "UPDATE `services` SET `service` = 'Database', `totalProjects` = '$newTotalProjects', `icon` = 'fa-sharp fa-solid fa-database' WHERE `services`.`Id` = $service_id";
+            $update_service_query_run = mysqli_query($conn,$update_service_query);
+            
+            if($update_service_query_run){
+
+                ?>
+                <script>
+                    alert("Service Updated Successfully!");
+                </script>
+                <?php
+            }
+            else{
+                ?>
+                <script>
+                    alert("Service not Updated Successfully!");
+                </script>
+                <?php
+            }
+        break;
+        case '4': // Programming
+            $update_service_query = "UPDATE `services` SET `service` = 'Programming', `totalProjects` = '$newTotalProjects', `icon` = 'fa-solid fa-code' WHERE `services`.`Id` = $service_id";
+            $update_service_query_run = mysqli_query($conn,$update_service_query);
+            
+            if($update_service_query_run){
+
+                ?>
+                <script>
+                    alert("Service Updated Successfully!");
+                </script>
+                <?php
+            }
+            else{
+                ?>
+                <script>
+                    alert("Service not Updated Successfully!");
+                </script>
+                <?php
+            }
+        break;
+        
+        default:
+        ?>
+        <script>
+            alert("This is in default!");
+        </script>
+        <?php
+        break;
+    }

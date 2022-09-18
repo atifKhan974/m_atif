@@ -1,0 +1,178 @@
+@media screen and (max-width: 850px) {
+    .circle{
+        display: none;
+    }
+    .split {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .padding-inline {
+        padding: 0 5rem;
+    }
+
+    .hero {
+        height: unset;
+    }
+
+    .hero .split {
+        flex-direction: column-reverse;
+    }
+
+    .hero .split img {
+        max-width: 80%;
+        margin-bottom: 8px;
+    }
+
+    .split .img::before {
+        height: 290px;
+        width: 327px;
+        left: 28px;
+        top: 4px;
+    }
+    
+
+    /* about seciton */
+
+    .aboutMe .split {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .col {
+        text-align: center;
+        /* border: solid white; */
+        margin-bottom: 15px;
+    }
+
+    .col::before {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    header .icons .upArrow{
+        display: none;
+        color: var(--clr-secondary);
+        position: fixed;
+        bottom: 20px;
+        right: 40px;
+        border: solid var(--clr-secondary);
+        padding: 12px;
+        font-size: 27px;
+    }
+    
+    section {
+        padding: 3rem 0;
+    }
+
+    body {
+        font-size: 1.2rem;
+        line-height: 1.3;
+    }
+
+    .content {
+        font-size: 1rem;
+    }
+
+    .padding-inline {
+        padding: 0 2rem;
+    }
+
+    /* NavBar */
+    .close {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        color: var(--clr-secondary);
+        font-size: 2rem;
+        z-index: 10;
+        cursor: pointer;
+    }
+
+    #menu {
+        display: block;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        color: var(--clr-secondary);
+        font-size: 22px;
+        z-index: 7;
+        cursor: pointer;
+    }
+
+    .header {
+        position: fixed;
+        left: -500px;
+        width: 70%;
+        height: 100%;
+        background-color: rgb(35, 35, 35);
+        box-shadow: 0 0 7px rgba(0, 0, 0, 0.7);
+        z-index: 8;
+    }
+
+    header .links {
+        flex-direction: column;
+    }
+
+    .links li {
+        margin-top: 40px;
+        margin-left: 0;
+    }
+
+    .links li a {
+        font-size: 1.2rem;
+    }
+
+    body {
+        font-size: 1.2rem;
+        line-height: 1.2;
+    }
+
+    .hero .name {
+        font-size: 2.5rem;
+        color: var(--clr-secondary);
+    }
+
+    .split .img::before {
+        height: 250px;
+        width: 250px;
+        left: 61px;
+    }
+
+    .hero .name span {
+        font-size: 3rem;
+    }
+
+    .hero .split img {
+        max-width: 70%;
+        margin-bottom: 8px;
+    }
+
+    .aboutMe .col h3 {
+        text-decoration: underline;
+    }
+
+
+    .grid .imgDiv .image.fullScreen {
+        /* transform: scale(3); */
+        width: 100%;
+    }
+
+    .grid .imgDiv .image.long.fullScreen {
+        /* transform: scale(3); */
+        width: 100%;
+        cursor: default;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .split .img::before {
+        height: 250px;
+        width: 250px;
+        left: 48px;
+    }
+}
